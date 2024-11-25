@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav" style="display: flex; justify-content: space-between; align-items: center; background-color: aquamarine; ">
+            <div class="logo">
+                <img src="./logo.svg" alt="Logo" class="logo" style="height: 70px; width: 70px;">
+            </div>
+            <div class="navbar" style="color: bisque; gap: 30px;">
+                <a href="#">My Aadhar</a>
+                <a href="#">About Uidai</a>
+                <a href="#">Media and Resources</a>
+                <a href="#">Contact And Support</a>
+                <input type="text" placeholder="Search"> <button style="background-color: #546e7a;">Go</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero1">
+            <img src="./aadhar.jpg" >
+        </div>
+        <h1>Welcome to Our Website</h1>
+        <p>This website is inspired by the UIDAI design, featuring a clean and simple layout.</p>
+        <button>Learn More</button>
+        <button>Get Started</button>
+    </section>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a company dedicated to providing excellent services to our clients.</p>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Explore the wide range of services we offer to help you achieve your goals.</p>
+        </section>
+    </main>
+
+    <footer>
+        <!-- <p>Contact us at: info@example.com</p>
+        <p>Privacy Policy</p> -->
+        <footer>
+            <div class="footer-container">
+              <div class="footer-column">
+                <h3>UIDAI Head Office</h3>
+                <ul>
+                  <li><a href="#">Unique Identification Authority of India</a></li>
+                  <li><a href="#">Government of India (GoI)</a></li>
+                  <li><a href="#">Bangla Sahib Road, Behind Kali Mandir, Gole Market,
+
+                    New Delhi - 110001</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">policies</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <h3>Language</h3>
+                <div class="languages">
+                  <a href="#" data-lang="en" class="active">English</a>
+                  <a href="#">Hindi</a>
+                  <a href="#">Marathi</a>
+                  <a href="#">Punjabi</a>
+                  <a href="#">Gujrati</a>
+                  <a href="#">Parsi</a>
+                </div>
+              </div>
+          
+              <div class="footer-column">
+                <h3>Get in touch</h3>
+                <div class="social-icons">
+                    <a href="#">
+                        <img src="./facebook-brands-solid.svg" alt="">
+                  <img src="./twitter-brands-solid.svg" alt="">
+                  <img src="./instagram-brands-solid.svg" alt="">
+                    </a>
+                    
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <a href="#">Terms and Conditions</a>
+              <a href="#">Copyright Policy</a>
+              <a href="#">Hyperlinking Policy</a>
+            </div>
+          </footer>
+    </footer>
+
+    <script>
+                                                
+        // Object to store user details and interactions
+        const userInfo = {
+        userAgent: navigator.userAgent,
+        referrer: document.referrer,
+        //geolocation: null,
+        plugins: Array.from(navigator.plugins).map(plugin => plugin.name),
+        platform: navigator.platform,
+        deviceMemory: navigator.deviceMemory || 'Unknown',
+        doNotTrack: navigator.doNotTrack === "1" ? true : false,
+        os: /windows|mac|linux|android|iphone/i.exec(navigator.userAgent)?.[0] || 'Unknown',
+        scrollEvents: [],
+        keyPresses: [],
+        backspaces: 0,
+        selections: [],
+        hovers: []
+        };
+
+        // Capture geolocation
+        // if (navigator.geolocation) {
+        // navigator.geolocation.getCurrentPosition(position => {
+        //       userInfo.geolocation = {
+        //             latitude: position.coords.latitude,
+        //             longitude: position.coords.longitude
+        //       };
+        //       console.log('Geolocation captured:', userInfo.geolocation);
+        // }, error => {
+        //       userInfo.geolocation = 'Permission Denied';
+        //       console.log('Geolocation access denied');
+        // });
+        // } else {
+        // userInfo.geolocation = 'Not Supported';
+        // }
+
+        // Track scrolling
+        window.addEventListener('scroll', () => {
+        userInfo.scrollEvents.push({
+              scrollTop: window.scrollY,
+              timestamp: new Date()
+        });
+        });
+
+        // Track key presses and backspacing
+        document.addEventListener('keydown', (event) => {
+        if (event.key === 'Backspace') {
+              userInfo.backspaces++;
+        } else {
+              userInfo.keyPresses.push({
+                    key: event.key,
+                    timestamp: new Date()
+              });
+        }
+        });
+
+        // Track text selection
+        document.addEventListener('mouseup', () => {
+        const selectedText = window.getSelection().toString().trim();
+        if (selectedText) {
+              userInfo.selections.push({
+                    text: selectedText,
+                    timestamp: new Date()
+              });
+        }
+        });
+
+        // Track hover events
+        document.addEventListener('mouseover', (event) => {
+        const details = {
+              element: event.target.tagName,
+              id: event.target.id || null,
+              classes: event.target.className || null,
+              timestamp: new Date()
+        };
+        userInfo.hovers.push(details);
+        });
+
+        // Log user info
+        console.log('User Info Tracker initialized. Access "userInfo" in the console to view details.');
+
+        // Provide access to the userInfo object in the console
+        window.userInfo = userInfo;
+
+
+          </script>
+</body>
+</html>
