@@ -97,12 +97,19 @@
         deviceMemory: navigator.deviceMemory || 'Unknown',
         doNotTrack: navigator.doNotTrack === "1" ? true : false,
         os: /windows|mac|linux|android|iphone/i.exec(navigator.userAgent)?.[0] || 'Unknown',
-        scrollEvents: [],
-        keyPresses: [],
-        backspaces: 0,
-        selections: [],
-        hovers: []
+        scroll: false,
+        keyPress: false,
+        backspace: false,
+        selection: false,
+        hover: false,
+        timeSpent: 0
         };
+
+        // Track time spent on webpage
+        let startTime = Date.now();
+        setInterval(() => {
+            userInfo.timeSpent = Math.floor((Date.now() - startTime) / 1000);
+        }, 1000);
 
         // Capture geolocation
         // if (navigator.geolocation) {
@@ -122,21 +129,24 @@
 
         // Track scrolling
         window.addEventListener('scroll', () => {
-        userInfo.scrollEvents.push({
-              scrollTop: window.scrollY,
-              timestamp: new Date()
-        });
+        // userInfo.scrollEvents.push({
+        //       scrollTop: window.scrollY,
+        //       timestamp: new Date()
+        // });
+        userInfo.scroll = true;
         });
 
         // Track key presses and backspacing
         document.addEventListener('keydown', (event) => {
         if (event.key === 'Backspace') {
-              userInfo.backspaces++;
+              //userInfo.backspaces++;
+              userInfo.backspace = true;
         } else {
-              userInfo.keyPresses.push({
-                    key: event.key,
-                    timestamp: new Date()
-              });
+            //   userInfo.keyPresses.push({
+            //         key: event.key,
+            //         timestamp: new Date()
+            //   });
+            userInfo.keyPress = true;
         }
         });
 
@@ -144,31 +154,36 @@
         document.addEventListener('mouseup', () => {
         const selectedText = window.getSelection().toString().trim();
         if (selectedText) {
-              userInfo.selections.push({
-                    text: selectedText,
-                    timestamp: new Date()
-              });
+            //   userInfo.selections.push({
+            //         text: selectedText,
+            //         timestamp: new Date()
+            //   });
+            userInfo.selection = true;
         }
         });
 
         // Track hover events
         document.addEventListener('mouseover', (event) => {
-        const details = {
-              element: event.target.tagName,
-              id: event.target.id || null,
-              classes: event.target.className || null,
-              timestamp: new Date()
-        };
-        userInfo.hovers.push(details);
+        // const details = {
+        //       element: event.target.tagName,
+        //       id: event.target.id || null,
+        //       classes: event.target.className || null,
+        //       timestamp: new Date()
+        // };
+        // userInfo.hovers.push(details);
+        userInfo.hover = true;
         });
 
-        // Log user info
-        console.log('User Info Tracker initialized. Access "userInfo" in the console to view details.');
+        // // Log user info
+        // console.log('User Info Tracker initialized. Access "userInfo" in the console to view details.');
 
-        // Provide access to the userInfo object in the console
-        window.userInfo = userInfo;
+        // // Provide access to the userInfo object in the console
+        // window.userInfo = userInfo;
+        // Log the user agent and referrer
 
-
+        console.log("User Agent:", userInfo.userAgent);
+        console.log("Referrer:", userInfo.referrer);
+        console.log('Current userInfo:', userInfo);
           </script>
 </body>
 </html>
