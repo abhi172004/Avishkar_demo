@@ -3,95 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Website</title>
+    <title>Sample Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="nav" style="display: flex; justify-content: space-between; align-items: center; background-color: aquamarine; ">
-            <div class="logo">
-                <img src="./logo.svg" alt="Logo" class="logo" style="height: 70px; width: 70px;">
-            </div>
-            <div class="navbar" style="color: bisque; gap: 30px;">
-                <a href="#">My Aadhar</a>
-                <a href="#">About Uidai</a>
-                <a href="#">Media and Resources</a>
-                <a href="#">Contact And Support</a>
-                <input type="text" placeholder="Search"> <button style="background-color: #546e7a;">Go</button>
-            </div>
-        </div>
-    </header>
+  <nav class="nav">
+    <div class="logo">
+        <img src="./logo.svg" alt="Logo" style="height: 70px; width: 70px;">
+    </div>
+    <div class="navbar">
+        <a href="#">My Aadhar</a>
+        <a href="#">About Uidai</a>
+        <a href="#">Media and Resources</a>
+        <a href="#">Contact And Support</a>
+        <input type="text" placeholder="Search"> <button style="background-color: #546e7a; padding: 1vh 1vh; border-radius: 1vh; box-shadow:inset">Go</button>
+    </div>
+</nav>
 
-    <section class="hero">
-        <div class="hero1">
-            <img src="./aadhar.jpg" >
-        </div>
-        <h1>Welcome to Our Website</h1>
-        <p>This website is inspired by the UIDAI design, featuring a clean and simple layout.</p>
-        <button>Learn More</button>
-        <button>Get Started</button>
+<section class="hero">
+    <img src="./aadhar.jpg" alt="Aadhar Card">
+    <h1>Welcome to Our Website</h1>
+    <p>This website is inspired by the UIDAI design, featuring a clean and simple layout.</p>
+    <div class="hero-buttons">
+        <a href="#">Learn More</a>
+        <a href="#">Get Started</a>
+    </div>
+</section>
+
+<main>
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>We are a company dedicated to providing excellent services to our clients.</p>
     </section>
 
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are a company dedicated to providing excellent services to our clients.</p>
-        </section>
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>Explore the wide range of services we offer to help you achieve your goals.</p>
-        </section>
-    </main>
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <p>Explore the wide range of services we offer to help you achieve your goals.</p>
+    </section>
+</main>
 
-    <footer>
-        <!-- <p>Contact us at: info@example.com</p>
-        <p>Privacy Policy</p> -->
-        <footer>
-            <div class="footer-container">
-              <div class="footer-column">
-                <h3>UIDAI Head Office</h3>
-                <ul>
-                  <li><a href="#">Unique Identification Authority of India</a></li>
-                  <li><a href="#">Government of India (GoI)</a></li>
-                  <li><a href="#">Bangla Sahib Road, Behind Kali Mandir, Gole Market,
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>UIDAI Head Office</h3>
+            <ul>
+                <li><a href="#">Unique Identification Authority of India</a></li>
+                <li><a href="#">Government of India (GoI)</a></li>
+                <li><a href="#">Bangla Sahib Road, Behind Kali Mandir, Gole Market, New Delhi - 110001</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Policies</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
 
-                    New Delhi - 110001</a></li>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">policies</a></li>
-                  <li><a href="#">Contact us</a></li>
-                </ul>
-              </div>
-              <div class="footer-column">
-                <h3>Language</h3>
-                <div class="languages">
-                  <a href="#" data-lang="en" class="active">English</a>
-                  <a href="#">Hindi</a>
-                  <a href="#">Marathi</a>
-                  <a href="#">Punjabi</a>
-                  <a href="#">Gujrati</a>
-                  <a href="#">Parsi</a>
-                </div>
-              </div>
-          
-              <div class="footer-column">
-                <h3>Get in touch</h3>
-                <div class="social-icons">
-                    <a href="#">
-                        <img src="./facebook-brands-solid.svg" alt="">
-                  <img src="./twitter-brands-solid.svg" alt="">
-                  <img src="./instagram-brands-solid.svg" alt="">
-                    </a>
-                    
-                </div>
-              </div>
+        <div class="footer-column">
+            <h3>Language</h3>
+            <div class="languages">
+                <a href="#" class="active">English</a>
+                <a href="#">Hindi</a>
+                <a href="#">Marathi</a>
+                <a href="#">Punjabi</a>
+                <a href="#">Gujrati</a>
+                <a href="#">Parsi</a>
             </div>
-            <div class="footer-bottom">
-              <a href="#">Terms and Conditions</a>
-              <a href="#">Copyright Policy</a>
-              <a href="#">Hyperlinking Policy</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Get in touch</h3>
+            <div class="social-icons">
+                <img src="./facebook-brands-solid.svg" alt="Facebook">
+                <img src="./twitter-brands-solid.svg" alt="Twitter">
+                <img src="./instagram-brands-solid.svg" alt="Instagram">
             </div>
-          </footer>
-    </footer>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Copyright Policy</a>
+        <a href="#">Hyperlinking Policy</a>
+    </div>
+</footer>
 
     <script>
                                                 
